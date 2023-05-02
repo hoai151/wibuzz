@@ -1,0 +1,293 @@
+<html>
+<head>
+    <title>Wibuzz/login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* độ trong suốt của nền form */
+        }
+
+        body {
+            background-size: cover; /* giúp ảnh nền tràn hết kích thước của body */
+            background-repeat: no-repeat; /* không lặp lại ảnh nền */
+            background-position: center center; /* căn giữa ảnh nền */
+        }
+
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* độ trong suốt của màu nền là 80% */
+
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaaaaa;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #1a73e8;
+            color: #ffffff;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            button:hover {
+                background-color: #0d47a1;
+            }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        a {
+            color: red;
+            text-decoration: none;
+            text-align:center;
+        }
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        #header {
+            border: 2px solid black;
+            background-color: black;
+            /* Đặt kiểu hiển thị là relative */
+            position: relative;
+            /* Đặt chiều rộng và chiều cao cho khối cha */
+            width: 100%;
+            height: 60px;
+            display: block;
+            position: fixed;
+            opacity: 0.9;
+            top:0;
+            left:0;
+            /* Đặt màu nền cho khối cha */
+        }
+
+            #header:hover {
+                opacity: 1;
+            }
+
+        .ct-header {
+            display: flex;
+            /* Định hướng các phần tử con theo chiều dọc */
+            align-items: center;
+            /* Đặt chiều rộng và chiều cao cho khung */
+            /* Văn bản */
+            /* Đặt font chữ cho văn bản */
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            /* Đặt kiểu hiển thị là absolute */
+            position: absolute;
+            /* Đặt chiều rộng và chiều cao cho khối con */
+            width: 70%;
+            /* Đặt màu nền cho khối con */
+            background-color: black;
+            /* Đặt khoảng cách từ các cạnh của khối cha */
+            top: 0;
+            left: 15%;
+            bottom: 0;
+            /* Đặt margin là auto để căn giữa khối con */
+            margin: auto;
+        }
+
+        .menu-option {
+            position: fixed;
+        }
+
+        .user {
+            display: flex;
+            margin: auto;
+        }
+
+        .logo {
+            display: block;
+            height: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .ct-logo {
+            height: 77%;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 6px;
+        }
+
+        #main-content {
+            max-width: 100%;
+        }
+
+        .menu {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            margin-top: auto;
+        }
+
+        .search {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: 4px;
+        }
+
+        .sreachs {
+            box-shadow: 0 0 5px 0 #f1ff00;
+            border-radius: 15px;
+            height: 20px;
+            width: 200px;
+        }
+
+        .A, .C, .R, .S, .lg, .su {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin: 15px;
+            padding: 5px;
+            box-shadow: 0 0 5px 0 #f1ff00;
+            border-radius: 15px;
+            font-family: Arial;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .list {
+            width: 88%;
+            margin-top: 26px;
+        }
+
+        .A:hover {
+            color: red;
+            transform: scale(1.1)
+        }
+
+        .R:hover {
+            color: red;
+            transform: scale(1.1)
+        }
+
+        .C:hover {
+            color: red;
+            transform: scale(1.1)
+        }
+
+        .S:hover {
+            color: red;
+            transform: scale(1.1)
+        }
+
+        .lg:hover {
+            transform: scale(1.1);
+            color: royalblue;
+        }
+
+        .su:hover {
+            transform: scale(1.1);
+            color: royalblue;
+        }
+    </style>
+</head>
+<body background="https://user-images.githubusercontent.com/26317155/210155933-db3a5f1a-1ec3-4777-915c-6deff2841ce9.png" height="100%">
+    <div id="header">
+        <div class="ct-header">
+            <div class="logo">
+                <a href="index.html">
+                    <img class="ct-logo" src="MakeWEBPC/logoxx.png" />
+                </a>
+            </div>
+            <div class="menu">
+                <a class="A" href="menu1.html">Anime</a>
+                <a class="C" href="menu2.html">Comics</a>
+                <a class="R" href="menu3.html">ranking</a>
+                <a class="S" href="menu4.html">Shop</a>
+            </div>
+            <div class="search">
+               
+            </div>
+            <div class="user">
+                <div class="login">
+                    <a class="lg" href="login.html"> Login</a>
+                </div>
+                <div class="signup">
+                    <a class="su" href="signup.html">Setting</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <div class="imgcontainer">
+            <img src="https://www.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png" alt="Avatar" class="avatar">
+            <h2>Log in</h2>
+        </div>
+
+        <div class="container">
+            <label for="username"><b>Account name</b></label>
+            <input type="text" placeholder="Enter account name" name="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter the password" name="psw" required>
+
+         
+
+            <button type="submit">Log in</button>
+           <a href="signup.html"> creative account?</a>
+        </div>
+    </form>
+
+    <!--end header-->
+    <!--end main-content-->
+    <div id="footer"></div>
+    <!--end footer-->
+
+</body>
+
+</html>
